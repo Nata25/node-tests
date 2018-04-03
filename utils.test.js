@@ -40,3 +40,17 @@ it('should verify first and last names are set', () => {
     lastName: 'Ivanova'
   });
 });
+
+it('should add two numbers asyncroniously', (done) => {
+  utils.asyncAdd(3, 4, (sum) => {
+    expect(sum).toBeA('number').toBe(7);
+    done();
+  });
+});
+
+it('should square two numbers asyncroniously', (done) => {
+  utils.asyncSquare(4, (sum) => {
+    expect(sum).toBeA('number').toBe(16);
+    done();
+  });
+});
